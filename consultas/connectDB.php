@@ -1,7 +1,7 @@
 <?php
 /* ========= CONFIGURACIÓN ========= */
 $hostDB = '127.0.0.1';
-$nameDB = 'julian';
+$nameDB = 'julian_db';
 $userDB = 'julian';
 $pwDB   = '12345';
 
