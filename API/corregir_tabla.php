@@ -1,5 +1,5 @@
 <?php
-require_once "connectDB.php";
+require_once __DIR__ . "/connectDB.php";
 
 echo "<h2>⚠️ RESETEANDO TABLA CLIENTS</h2>";
 echo "<p style='color:red;'>Esto eliminará todos los datos existentes</p>";
