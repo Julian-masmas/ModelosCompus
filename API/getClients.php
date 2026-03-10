@@ -1,16 +1,11 @@
 <?php
-require_once "consultas/connectDB.php";
-
+require_once __DIR__ . '/connectDB.php';
 header('Content-Type: application/json');
 
 try {
-    $stmt = $conn->query("SELECT * FROM clients");
-    $clients = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    echo json_encode($clients);
-
+    $stmt = $conn->query('SELECT id_cliente, name, correo, celular FROM clients ORDER BY id_cliente DESC');
+    echo json_encode($stmt->fetchAll());
 } catch (PDOException $e) {
-    echo json_encode([
-        "error" => "Error al obtener los clientes"
-    ]);
+    http_response_code(500);
+    echo json_encode(['error' => 'Error al obtener los clientes']);
 }

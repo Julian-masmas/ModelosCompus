@@ -1,5 +1,5 @@
 <?php
-require_once "connectDB.php";
+require_once __DIR__ . "/connectDB.php";
 
 // Obtener datos del POST
 $data = json_decode(file_get_contents("php://input"), true);
