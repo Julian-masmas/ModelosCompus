@@ -1,0 +1,32 @@
+services:
+  # Contenedor de Base de Datos
+  db:
+    image: mysql:8.0
+    container_name: app_mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: nombre_tu_db
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_USER: dev_user
+      MYSQL_PASSWORD: dev_password
+    volumes:
+      - ./docker/db_data:/var/lib/mysql
+    networks:
+      - web-network
+
+  # Contenedor de Aplicación
+  app:
+    build: .
+    container_name: app_web
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html # Sincroniza toda tu carpeta actual
+    depends_on:
+      - db
+    networks:
+      - web-network
+
+networks:
+  web-network:
+    driver: bridge
