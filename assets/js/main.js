@@ -1,4 +1,5 @@
-const API_BASE = '../../API';
+const API_BASE = '/API';
+console.log('API_BASE:', API_BASE);
 
         function escapeHtml(str = '') {
             return String(str)

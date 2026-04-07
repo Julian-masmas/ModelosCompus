@@ -1,9 +1,12 @@
 <?php
 /* ========= CONFIGURACIÓN ========= */
-$hostDB = '127.0.0.1';
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
+$hostDB = "db";
 $nameDB = 'julian_db';
-$userDB = 'julian';
-$pwDB   = '12345';
+$userDB = "julian";
+$pwDB   = 'julian12345';
 
 /* ========= CONEXIÓN ========= */
 try {
