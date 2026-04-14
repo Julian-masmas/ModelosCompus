@@ -10,10 +10,11 @@
 
 <body>
     <aside class="sidebar">
-        <a href="index.php">Inicio</a>
+        <h2>Panel</h2>
+        <a class="active" href="index.php">Inicio</a>
         <a href="ventas.php">Ventas</a>
-        <a class="active" href="productos.php">Productos</a>
-    </aside>
+        <a href="productos.php">Productos</a>
+    </aside>s
 
     <main>
         <section class="panel">

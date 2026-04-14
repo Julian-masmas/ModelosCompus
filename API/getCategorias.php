@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/connectDB.php';
+require_once __DIR__ . '/../config/connectDB.php';
 header('Content-Type: application/json');
 
 try {

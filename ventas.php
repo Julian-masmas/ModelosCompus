@@ -10,8 +10,9 @@
 
 <body>
     <aside class="sidebar">
-        <a href="index.php">Inicio</a>
-        <a class="active" href="ventas.php">Ventas</a>
+        <h2>Panel</h2>
+        <a class="active" href="index.php">Inicio</a>
+        <a href="ventas.php">Ventas</a>
         <a href="productos.php">Productos</a>
     </aside>
 

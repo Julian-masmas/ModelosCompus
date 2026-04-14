@@ -1,30 +1,36 @@
-version: '3.8'
-
 services:
+  # Contenedor de Base de Datos
   db:
     image: mysql:8.0
-    container_name: proyecto-db
+    container_name: app_mysql
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: root123
       MYSQL_DATABASE: julian_db
+      MYSQL_ROOT_PASSWORD: 12345
       MYSQL_USER: julian
-      MYSQL_PASSWORD: julian12345
-    ports:
-      - "3307:3306"
+      MYSQL_PASSWORD: 12345
     volumes:
-      - db_data:/var/lib/mysql
+      - mysql_data:/var/lib/mysql
+      - ./julian_db.sql:/docker-entrypoint-initdb.d/julian_db.sql
+    networks:
+      - web-network
 
+  # Contenedor de Aplicación
   app:
     build: .
-    container_name: proyecto-app
-    restart: always
+    container_name: app_web
     ports:
       - "8080:80"
     volumes:
-      - ./:/var/www/html
+      - .:/var/www/html # Sincroniza toda tu carpeta actual
     depends_on:
       - db
+    networks:
+      - web-network
+
+networks:
+  web-network:
+    driver: bridge
 
 volumes:
-  db_data:
+  mysql_data:
