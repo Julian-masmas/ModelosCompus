@@ -18,6 +18,7 @@ async function cargarFechasVentas(idCliente) {
 async function cargarClientes() {
     const response = await fetch(`${API_BASE}/getClients.php`);
     const text = await response.text();
+    // const data = await response.json();
     console.log(text);
 
     let data;
@@ -29,7 +30,6 @@ async function cargarClientes() {
     }
 
     // const response = await fetch(`${API_BASE}/getClients.php`);
-    // const data = await response.json();
     const tabla = document.getElementById('tablaClientes');
     tabla.innerHTML = '';
 

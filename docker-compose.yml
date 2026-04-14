@@ -20,13 +20,18 @@ services:
     build: .
     container_name: app_web
     ports:
-      - "8080:80"
+      - "${WEB_PORT}:80"
     volumes:
       - .:/var/www/html # Sincroniza toda tu carpeta actual
     depends_on:
       - db
     networks:
       - web-network
+    environment:
+      DB_HOST: db
+      DB_NAME: ${DB_NAME}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
 
 networks:
   web-network:
