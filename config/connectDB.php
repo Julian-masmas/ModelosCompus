@@ -3,10 +3,10 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-$hostDB = "db";
-$nameDB = 'julian_db';
-$userDB = "julian";
-$pwDB   = 'julian12345';
+$hostDB = getenv('DB_HOST');
+$nameDB = getenv('DB_NAME');
+$userDB = getenv('DB_USER');
+$pwDB   = getenv('DB_PASSWORD');
 
 /* ========= CONEXIÓN ========= */
 try {

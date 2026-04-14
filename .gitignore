@@ -1,1 +1,4 @@
 docker/db_data/
+.env/
+docker-compose.yml
+Dockerfile
